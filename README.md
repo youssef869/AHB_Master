@@ -35,7 +35,7 @@ Besides the standard AHB-Lite signals, extra ports were added to act as the mast
 - **`END_TRANS_IN`** – ends the transaction, mainly used to end INCR bursts.
 - **`BUSY_IN`** – makes the next HTRANS BUSY.
 
-![master_interface](images/interface.png)
+<img width="638" height="401" alt="interface" src="https://github.com/user-attachments/assets/9621347f-cce9-4969-bb3b-47fd9d32431a" />
 
 ### 3. FSM
 
@@ -48,7 +48,8 @@ The master is controlled by a four-state FSM:
 
 In both data states the address is incremented by 2^HSIZE for INCR bursts, HTRANS stays SEQ until `END_TRANS_IN`, and the FSM returns to `IDLE_S` when it is asserted.
 
-![fsm](images/fsm.png)
+<img width="622" height="455" alt="fsm" src="https://github.com/user-attachments/assets/868f398f-466c-4c6d-b23e-fd5658e41c00" />
+
 
 ### 4. Verilog RTL Implementation
 
@@ -76,16 +77,17 @@ All test scenarios behaved as expected in simulation. Below are some of the wave
 
 - ✅ Passed: single write transfer
 
-![single_write](images/single_write.png)
+<img width="1143" height="621" alt="single_write" src="https://github.com/user-attachments/assets/8a4d7197-e3ec-4e29-8b43-78e97242a53f" />
 
 - ✅ Passed: waited transfers
 
-![waited](images/waited.png)
+<img width="1143" height="651" alt="waited" src="https://github.com/user-attachments/assets/9a71785c-91c8-4339-b91e-0ea506cbb0b3" />
 
 - ✅ Passed: INCR burst write, with the address incrementing by the transfer size
 
-![incr_write](images/incr_write.png)
+<img width="1149" height="657" alt="incr_write" src="https://github.com/user-attachments/assets/51574984-842c-4638-9618-c2b1dcdf97b0" />
 
 - ✅ Passed: byte and halfword write and read
 
-![byte_halfword](images/byte_halfword.png)
+<img width="1056" height="1248" alt="byte_halfword" src="https://github.com/user-attachments/assets/a67b325f-40a0-431c-8f3b-3578ff5681b1" />
+
